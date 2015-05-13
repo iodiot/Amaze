@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{940CD683-D791-4128-B82E-944FE44ECAA6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Amaze</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>libs\SDL_image-1.2.10\include;libs\SDL-1.2.14\include;engine;$(IncludePath)</IncludePath>
+    <LibraryPath>libs\SDL_image-1.2.10\lib;libs\SDL-1.2.14\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
+    <ReferencePath>$(VCInstallDir)atlmfc\lib;$(VCInstallDir)lib</ReferencePath>
+    <ExecutablePath>$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>libs\SDL_image-1.2.10\include;libs\SDL-1.2.14\include;engine;C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+    <LibraryPath>libs\SDL-1.2.14\lib;libs\SDL_image-1.2.10\lib;C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_SECURE_SCL=0;_HAS_ITERATOR_DEBUGGING=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL_image.lib;SDL.lib;SDLmain.lib;OpenGL32.lib;GLu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL_image.lib;SDL.lib;SDLmain.lib;OpenGL32.lib;GLu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <Profile>true</Profile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="engine\art.cpp" />
+    <ClCompile Include="engine\blocks\block.cpp" />
+    <ClCompile Include="engine\blocks\door_block.cpp" />
+    <ClCompile Include="engine\blocks\hollow_block.cpp" />
+    <ClCompile Include="engine\blocks\ice_block.cpp" />
+    <ClCompile Include="engine\blocks\pit_block.cpp" />
+    <ClCompile Include="engine\blocks\pressure_plate_block.cpp" />
+    <ClCompile Include="engine\blocks\solid_block.cpp" />
+    <ClCompile Include="engine\blocks\broken_block.cpp" />
+    <ClCompile Include="engine\blocks\water_block.cpp" />
+    <ClCompile Include="engine\consts.cpp" />
+    <ClCompile Include="engine\core.cpp" />
+    <ClCompile Include="engine\drawer.cpp" />
+    <ClCompile Include="engine\entities\altar_entity.cpp" />
+    <ClCompile Include="engine\entities\bat_entity.cpp" />
+    <ClCompile Include="engine\entities\boulder_entity.cpp" />
+    <ClCompile Include="engine\entities\chest_entity.cpp" />
+    <ClCompile Include="engine\entities\enemy_entity.cpp" />
+    <ClCompile Include="engine\entities\entity.cpp" />
+    <ClCompile Include="engine\entities\ghost_entity.cpp" />
+    <ClCompile Include="engine\entities\jail_entity.cpp" />
+    <ClCompile Include="engine\entities\ladder_entity.cpp" />
+    <ClCompile Include="engine\entities\loot_entity.cpp" />
+    <ClCompile Include="engine\entities\particle_entity.cpp" />
+    <ClCompile Include="engine\entities\torch_entity.cpp" />
+    <ClCompile Include="engine\geometry.cpp" />
+    <ClCompile Include="engine\input.cpp" />
+    <ClCompile Include="engine\item.cpp" />
+    <ClCompile Include="engine\levels\crypt_level.cpp" />
+    <ClCompile Include="engine\levels\dungeon_level.cpp" />
+    <ClCompile Include="engine\levels\ice_level.cpp" />
+    <ClCompile Include="engine\levels\level.cpp" />
+    <ClCompile Include="engine\levels\overworld_level.cpp" />
+    <ClCompile Include="engine\levels\start_level.cpp" />
+    <ClCompile Include="engine\levels\switch_block.cpp" />
+    <ClCompile Include="engine\levels\temple_level.cpp" />
+    <ClCompile Include="engine\menus\got_loot_menu.cpp" />
+    <ClCompile Include="engine\menus\menu.cpp" />
+    <ClCompile Include="engine\menus\pause_menu.cpp" />
+    <ClCompile Include="engine\physical_body.cpp" />
+    <ClCompile Include="engine\physics.cpp" />
+    <ClCompile Include="engine\player.cpp" />
+    <ClCompile Include="engine\renderer.cpp" />
+    <ClCompile Include="engine\screen.cpp" />
+    <ClCompile Include="engine\sound.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="engine\stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="engine\all_in_one.h" />
+    <ClInclude Include="engine\art.h" />
+    <ClInclude Include="engine\blocks\block.h" />
+    <ClInclude Include="engine\consts.h" />
+    <ClInclude Include="engine\core.h" />
+    <ClInclude Include="engine\drawer.h" />
+    <ClInclude Include="engine\entities\entity.h" />
+    <ClInclude Include="engine\geometry.h" />
+    <ClInclude Include="engine\input.h" />
+    <ClInclude Include="engine\item.h" />
+    <ClInclude Include="engine\levels\level.h" />
+    <ClInclude Include="engine\menus\menu.h" />
+    <ClInclude Include="engine\physical_body.h" />
+    <ClInclude Include="engine\physics.h" />
+    <ClInclude Include="engine\renderer.h" />
+    <ClInclude Include="engine\screen.h" />
+    <ClInclude Include="engine\sound.h" />
+    <ClInclude Include="engine\stdafx.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
